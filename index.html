@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARALLAXdesigns</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+        }
+
+        header {
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(circle at center, #202020 0%, #080808 45%, #050505 75%);
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 12vw, 110px);
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #aaa;
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 16px 30px;
+            border-radius: 50px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            min-height: 330px;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(145deg, #181818, #090909);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            padding: 40px 7%;
+            border-top: 1px solid #222;
+            color: #666;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">PARALLAXdesigns</div>
+
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>PARALLAXdesigns</h1>
+
+        <p>
+            Premium digital wallpapers and design packs,
+            created to make your screen look extraordinary.
+        </p>
+
+        <a class="button" href="#shop">Explore designs</a>
+    </section>
+
+    <section class="section" id="shop">
+        <h2>Featured designs</h2>
+
+        <div class="products">
+
+            <div class="card">
+                <h3>Wallpaper Pack 01</h3>
+                <p>Premium digital wallpapers.</p>
+                <a class="button" href="#">View pack</a>
+            </div>
+
+            <div class="card">
+                <h3>Wallpaper Pack 02</h3>
+                <p>Ultra-clean designs for your phone.</p>
+                <a class="button" href="#">View pack</a>
+            </div>
+
+            <div class="card">
+                <h3>Wallpaper Pack 03</h3>
+                <p>Designed for a premium look.</p>
+                <a class="button" href="#">View pack</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>Designed differently.</h2>
+
+        <p style="color:#999; max-width:650px; font-size:18px; line-height:1.7;">
+            PARALLAXdesigns creates premium digital artwork
+            for people who want their devices to stand out.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 PARALLAXdesigns. All rights reserved.
+    </footer>
+
+</body>
+</html>
