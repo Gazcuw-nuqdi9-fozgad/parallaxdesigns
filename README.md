@@ -1,2 +1,2 @@
 # parallaxdesigns
-Official PARALLAXdesigns website for premium digital wallpapers and design packs.
+Official PARALLAX designs website for premium digital wallpapers and design packs.
