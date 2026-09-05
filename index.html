@@ -3,136 +3,1076 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARALLAXdesigns</title>
+
+    <title>PARALLAX designs | Your screen. Redefined.</title>
+
+    <meta name="description" content="PARALLAX designs creates premium digital wallpapers and visual experiences.">
 
     <style>
+        :root {
+            --black: #03050b;
+            --navy: #071020;
+            --blue: #4e8cff;
+            --purple: #9b5cff;
+            --text: #f5f7ff;
+            --muted: #858da3;
+            --line: rgba(255, 255, 255, 0.09);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: white;
+        html {
+            scroll-behavior: smooth;
         }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: var(--black);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         header {
-            padding: 25px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 22px 5%;
+
+            background: rgba(3, 5, 11, 0.55);
+            border-bottom: 1px solid var(--line);
+
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
         }
 
-        .logo {
-            font-size: 24px;
+        .nav {
+            max-width: 1450px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 0.9;
+        }
+
+        .brand-main {
+            font-size: 21px;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+        }
+
+        .brand-sub {
+            margin-top: 5px;
+            margin-left: 2px;
+
+            font-family: "Brush Script MT", "Segoe Script", cursive;
+            font-size: 15px;
+            font-weight: 400;
+
+            letter-spacing: 1px;
+            color: #aeb5ca;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
 
         nav a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 25px;
+            color: #9299aa;
+            font-size: 13px;
+            transition: color 0.25s ease;
         }
 
         nav a:hover {
             color: white;
         }
 
+        .nav-cta {
+            padding: 11px 18px;
+
+            border: 1px solid rgba(130, 150, 255, 0.28);
+            border-radius: 100px;
+
+            background: rgba(90, 110, 255, 0.08);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            min-height: 75vh;
+            min-height: 100vh;
+            position: relative;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 40px 20px;
+            justify-content: center;
+
+            overflow: hidden;
+
+            padding: 150px 6% 100px;
+
             background:
-                radial-gradient(circle at center, #202020 0%, #080808 45%, #050505 75%);
+                radial-gradient(
+                    ellipse at 50% 45%,
+                    rgba(76, 89, 255, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    ellipse at 70% 35%,
+                    rgba(157, 76, 255, 0.15),
+                    transparent 32%
+                ),
+                #03050b;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            width: 700px;
+            height: 700px;
+
+            top: 8%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    from 180deg,
+                    transparent,
+                    rgba(67, 119, 255, 0.2),
+                    rgba(157, 76, 255, 0.22),
+                    transparent
+                );
+
+            filter: blur(45px);
+
+            animation: rotateGlow 18s linear infinite;
+        }
+
+        .orb {
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(94, 133, 255, 0.25);
+
+            box-shadow:
+                0 0 80px rgba(83, 101, 255, 0.12),
+                inset 0 0 70px rgba(157, 76, 255, 0.08);
+
+            transform: rotate(-18deg) scaleY(0.34);
+
+            animation: orbFloat 7s ease-in-out infinite;
+        }
+
+        .orb::before,
+        .orb::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 18px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(157, 100, 255, 0.16);
+        }
+
+        .orb::after {
+            inset: 55px;
+
+            border-color: rgba(79, 142, 255, 0.16);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+
+            width: 100%;
+            max-width: 1050px;
+
+            text-align: center;
+
+            animation: heroEnter 1.1s ease both;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 9px 15px;
+
+            border: 1px solid var(--line);
+            border-radius: 100px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            color: #9ea7bd;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 30px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #7097ff;
+
+            box-shadow: 0 0 12px #7097ff;
         }
 
         .hero h1 {
-            font-size: clamp(50px, 12vw, 110px);
-            letter-spacing: -4px;
-            margin-bottom: 20px;
+            font-size: clamp(58px, 11vw, 145px);
+
+            line-height: 0.9;
+
+            letter-spacing: -7px;
+
+            font-weight: 800;
         }
 
-        .hero p {
-            max-width: 650px;
-            color: #aaa;
-            font-size: 19px;
-            line-height: 1.6;
-            margin-bottom: 35px;
+        .hero h1 .bright {
+            color: #ffffff;
+        }
+
+        .hero h1 .dim {
+            display: block;
+
+            margin-top: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6b8cff,
+                    #b36cff,
+                    #6b8cff
+                );
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation: gradientMove 7s ease-in-out infinite;
+        }
+
+        .tagline {
+            margin: 32px auto 0;
+
+            color: #858da3;
+
+            font-size: clamp(16px, 2vw, 20px);
+
+            line-height: 1.7;
+
+            max-width: 630px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 13px;
+
+            margin-top: 40px;
+
+            flex-wrap: wrap;
         }
 
         .button {
-            display: inline-block;
-            padding: 16px 30px;
-            border-radius: 50px;
-            background: white;
-            color: black;
-            text-decoration: none;
+            padding: 15px 25px;
+
+            border-radius: 100px;
+
+            font-size: 13px;
             font-weight: 700;
-            transition: 0.2s;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .primary {
+            background: white;
+            color: #03050b;
+
+            box-shadow:
+                0 0 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .secondary {
+            border: 1px solid rgba(255, 255, 255, 0.13);
+
+            background: rgba(255, 255, 255, 0.035);
+
+            color: white;
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .button:hover {
             transform: translateY(-3px);
         }
 
-        .section {
-            padding: 80px 7%;
+        .primary:hover {
+            box-shadow:
+                0 12px 35px rgba(255, 255, 255, 0.14);
         }
 
-        .section h2 {
-            font-size: 38px;
-            margin-bottom: 40px;
+        .secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+
+            bottom: 28px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #555d72;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           COLLECTION
+        ========================= */
+
+        .section {
+            max-width: 1450px;
+
+            margin: auto;
+
+            padding: 120px 6%;
+        }
+
+        .section-top {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            color: #667087;
+
+            font-size: 10px;
+
+            letter-spacing: 2.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 75px);
+
+            letter-spacing: -4px;
+
+            line-height: 1;
+        }
+
+        .section-copy {
+            max-width: 420px;
+
+            color: #737b90;
+
+            line-height: 1.7;
+
+            font-size: 14px;
         }
 
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
         }
 
-        .card {
-            min-height: 330px;
-            border: 1px solid #222;
-            border-radius: 20px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            background: linear-gradient(145deg, #181818, #090909);
+        .product {
+            position: relative;
+
+            min-height: 470px;
+
+            overflow: hidden;
+
+            border-radius: 26px;
+
+            border: 1px solid var(--line);
+
+            background: #080b14;
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease;
         }
 
-        .card h3 {
-            font-size: 24px;
+        .product:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(111, 131, 255, 0.35);
+        }
+
+        .product-art {
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+        }
+
+        .product-art::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: 18%;
+            left: 50%;
+
+            transform:
+                translateX(-50%)
+                rotate(30deg);
+
+            border-radius: 40%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(64, 128, 255, 0.5),
+                    rgba(155, 76, 255, 0.4)
+                );
+
+            filter: blur(55px);
+        }
+
+        .product-art::after {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            top: 23%;
+            left: 50%;
+
+            transform:
+                translateX(-50%)
+                rotate(45deg);
+
+            border: 1px solid
+                rgba(131, 152, 255, 0.3);
+
+            border-radius: 32px;
+        }
+
+        .product:nth-child(2) .product-art::before {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(39, 104, 255, 0.5),
+                    rgba(66, 210, 255, 0.25)
+                );
+        }
+
+        .product:nth-child(2) .product-art::after {
+            border-radius: 50%;
+
+            transform:
+                translateX(-50%)
+                rotate(-20deg)
+                scaleY(0.55);
+        }
+
+        .product:nth-child(3) .product-art::before {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(157, 70, 255, 0.55),
+                    rgba(72, 77, 255, 0.25)
+                );
+        }
+
+        .product:nth-child(3) .product-art::after {
+            transform:
+                translateX(-50%)
+                rotate(45deg)
+                scale(0.8);
+        }
+
+        .product-content {
+            position: absolute;
+
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+
+            z-index: 4;
+        }
+
+        .product-number {
+            position: absolute;
+
+            top: 24px;
+            left: 25px;
+
+            color: #50586b;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+        .product h3 {
+            font-size: 27px;
+
+            letter-spacing: -1px;
+
             margin-bottom: 8px;
         }
 
-        .card p {
-            color: #888;
+        .product p {
+            color: #7d8497;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
             margin-bottom: 20px;
         }
 
-        footer {
-            padding: 40px 7%;
-            border-top: 1px solid #222;
-            color: #666;
-            text-align: center;
+        .product-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 700;
         }
 
-        @media (max-width: 600px) {
+        .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .product-link:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* =========================
+           BRAND STATEMENT
+        ========================= */
+
+        .statement {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 150px 6%;
+
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(91, 76, 255, 0.13),
+                    transparent 45%
+                );
+        }
+
+        .statement::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 1px;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(-25deg);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(94, 133, 255, 0.3),
+                    transparent
+                );
+        }
+
+        .statement h2 {
+            position: relative;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            font-size: clamp(40px, 7vw, 90px);
+
+            line-height: 1.02;
+
+            letter-spacing: -5px;
+        }
+
+        .statement h2 span {
+            color: #596174;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(0, 1fr);
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: clamp(42px, 6vw, 75px);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+        }
+
+        .about p {
+            max-width: 590px;
+
+            margin-top: 25px;
+
+            color: #7b8397;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        .about-visual {
+            min-height: 450px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            border: 1px solid var(--line);
+
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(92, 84, 255, 0.18),
+                    transparent 38%
+                ),
+                #070a12;
+        }
+
+        .about-orbit {
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                rotate(-25deg)
+                scaleY(0.3);
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(98, 142, 255, 0.4);
+
+            box-shadow:
+                0 0 60px rgba(83, 105, 255, 0.12);
+        }
+
+        .about-orbit::before,
+        .about-orbit::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 35px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(161, 91, 255, 0.3);
+        }
+
+        .about-orbit::after {
+            inset: 80px;
+
+            border-color:
+                rgba(80, 151, 255, 0.3);
+        }
+
+        .about-letter {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-size: 130px;
+
+            font-weight: 800;
+
+            letter-spacing: -10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #718bff,
+                    #b26bff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 55px 6%;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-inner {
+            max-width: 1450px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .footer-brand {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .footer-copy {
+            color: #50586b;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes heroEnter {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateGlow {
+            from {
+                transform:
+                    translateX(-50%)
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    translateX(-50%)
+                    rotate(360deg);
+            }
+        }
+
+        @keyframes orbFloat {
+            0%,
+            100% {
+                transform:
+                    rotate(-18deg)
+                    scaleY(0.34)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    rotate(-18deg)
+                    scaleY(0.34)
+                    translateY(-15px);
+            }
+        }
+
+        @keyframes gradientMove {
+            0%,
+            100% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
             nav {
+                gap: 16px;
+            }
+
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .section-top {
+                display: block;
+            }
+
+            .section-copy {
+                margin-top: 20px;
+            }
+        }
+
+        /* =========================
+           PHONE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 17px 5%;
+            }
+
+            .brand-main {
+                font-size: 17px;
+
+                letter-spacing: 2px;
+            }
+
+            .brand-sub {
+                font-size: 13px;
+            }
+
+            nav a:not(.nav-cta) {
                 display: none;
             }
 
+            .nav-cta {
+                padding: 9px 15px;
+            }
+
+            .hero {
+                padding:
+                    135px 20px
+                    85px;
+            }
+
+            .hero::before {
+                width: 420px;
+                height: 420px;
+            }
+
+            .orb {
+                width: 360px;
+                height: 360px;
+            }
+
             .hero h1 {
+                font-size: 61px;
+
+                letter-spacing: -4px;
+            }
+
+            .tagline {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+
+                width: 100%;
+
+                max-width: 330px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .button {
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .section {
+                padding:
+                    90px 5%;
+            }
+
+            .section-title {
                 letter-spacing: -2px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product {
+                min-height: 390px;
+            }
+
+            .statement {
+                padding:
+                    110px 6%;
+            }
+
+            .statement h2 {
+                letter-spacing: -3px;
+            }
+
+            .about-visual {
+                min-height: 340px;
+            }
+
+            .about-orbit {
+                width: 310px;
+                height: 310px;
+            }
+
+            .about-letter {
+                font-size: 95px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 53px;
+            }
+
+            .section-title {
+                font-size: 39px;
             }
         }
     </style>
@@ -140,63 +1080,261 @@
 
 <body>
 
-    <header>
-        <div class="logo">PARALLAXdesigns</div>
+    <!-- NAVIGATION -->
 
-        <nav>
-            <a href="#shop">Shop</a>
-            <a href="#about">About</a>
-        </nav>
+    <header>
+        <div class="nav">
+
+            <a href="#" class="brand">
+                <span class="brand-main">PARALLAX</span>
+                <span class="brand-sub">designs</span>
+            </a>
+
+            <nav>
+                <a href="#shop">Collection</a>
+                <a href="#about">Studio</a>
+                <a href="#shop" class="nav-cta">Explore</a>
+            </nav>
+
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>PARALLAXdesigns</h1>
 
-        <p>
-            Premium digital wallpapers and design packs,
-            created to make your screen look extraordinary.
-        </p>
+    <!-- HERO -->
 
-        <a class="button" href="#shop">Explore designs</a>
-    </section>
+    <main>
 
-    <section class="section" id="shop">
-        <h2>Featured designs</h2>
+        <section class="hero">
 
-        <div class="products">
+            <div class="orb"></div>
 
-            <div class="card">
-                <h3>Wallpaper Pack 01</h3>
-                <p>Premium digital wallpapers.</p>
-                <a class="button" href="#">View pack</a>
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    Digital design studio
+                </div>
+
+                <h1>
+                    <span class="bright">Your screen.</span>
+                    <span class="dim">Redefined.</span>
+                </h1>
+
+                <p class="tagline">
+                    Premium digital artwork and visual experiences
+                    designed for people who expect more from
+                    their screens.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#shop" class="button primary">
+                        Explore collection
+                    </a>
+
+                    <a href="#about" class="button secondary">
+                        Discover PARALLAX
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="card">
-                <h3>Wallpaper Pack 02</h3>
-                <p>Ultra-clean designs for your phone.</p>
-                <a class="button" href="#">View pack</a>
+            <div class="scroll-indicator">
+                Scroll to explore
             </div>
 
-            <div class="card">
-                <h3>Wallpaper Pack 03</h3>
-                <p>Designed for a premium look.</p>
-                <a class="button" href="#">View pack</a>
+        </section>
+
+
+        <!-- COLLECTION -->
+
+        <section class="section" id="shop">
+
+            <div class="section-top">
+
+                <div>
+                    <div class="section-label">
+                        01 / Collection
+                    </div>
+
+                    <h2 class="section-title">
+                        Featured designs.
+                    </h2>
+                </div>
+
+                <p class="section-copy">
+                    A growing collection of premium digital creations,
+                    designed around atmosphere, detail and visual impact.
+                </p>
+
+            </div>
+
+
+            <div class="products">
+
+                <article class="product">
+
+                    <div class="product-art"></div>
+
+                    <span class="product-number">
+                        001
+                    </span>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Obsidian
+                        </h3>
+
+                        <p>
+                            Deep contrast. Refined atmosphere.
+                            Built for a darker screen.
+                        </p>
+
+                        <a href="#" class="product-link">
+                            Explore pack
+                            <span class="arrow">→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product">
+
+                    <div class="product-art"></div>
+
+                    <span class="product-number">
+                        002
+                    </span>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Velocity
+                        </h3>
+
+                        <p>
+                            Motion, energy and luminous colour
+                            engineered into one visual system.
+                        </p>
+
+                        <a href="#" class="product-link">
+                            Explore pack
+                            <span class="arrow">→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="product">
+
+                    <div class="product-art"></div>
+
+                    <span class="product-number">
+                        003
+                    </span>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Monolith
+                        </h3>
+
+                        <p>
+                            Minimal geometry and futuristic depth
+                            for a clean modern aesthetic.
+                        </p>
+
+                        <a href="#" class="product-link">
+                            Explore pack
+                            <span class="arrow">→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <section class="statement">
+
+            <h2>
+                Designed for the moments
+                <span>between looking and staring.</span>
+            </h2>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="section" id="about">
+
+            <div class="about">
+
+                <div>
+
+                    <div class="section-label">
+                        02 / The studio
+                    </div>
+
+                    <h2>
+                        More than<br>
+                        a wallpaper.
+                    </h2>
+
+                    <p>
+                        PARALLAX designs is a digital design studio
+                        creating premium visual experiences for
+                        modern devices and digital spaces.
+                    </p>
+
+                </div>
+
+
+                <div class="about-visual">
+
+                    <div class="about-orbit"></div>
+
+                    <div class="about-letter">
+                        P
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                PARALLAX designs
+            </div>
+
+            <div class="footer-copy">
+                © 2026 PARALLAX designs. All rights reserved.
             </div>
 
         </div>
-    </section>
 
-    <section class="section" id="about">
-        <h2>Designed differently.</h2>
-
-        <p style="color:#999; max-width:650px; font-size:18px; line-height:1.7;">
-            PARALLAXdesigns creates premium digital artwork
-            for people who want their devices to stand out.
-        </p>
-    </section>
-
-    <footer>
-        © 2026 PARALLAXdesigns. All rights reserved.
     </footer>
 
 </body>
