@@ -4,40 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PARALLAX designs | Premium Digital Wallpapers</title>
+<title>PARALLAX designs</title>
 
-<meta name="description" content="PARALLAX designs creates premium digital wallpapers and screen experiences designed to redefine your device.">
+<meta name="description" content="PARALLAX designs. Premium digital artwork and wallpapers designed to redefine your screen.">
 
-<!-- Elegant calligraphy + premium display fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
-    --black: #03050b;
-    --black-2: #050812;
-    --navy: #071020;
-
-    --blue: #4e8cff;
-    --blue-bright: #79a9ff;
-
-    --purple: #9b5cff;
-    --purple-bright: #c28cff;
-
-    --white: #f7f8ff;
-    --muted: #858da3;
-
-    --line: rgba(255,255,255,0.10);
-    --glass: rgba(255,255,255,0.045);
-}
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -45,8 +26,8 @@ html {
 }
 
 body {
-    background: var(--black);
-    color: var(--white);
+    background: #020205;
+    color: #ffffff;
     font-family: "Inter", sans-serif;
     overflow-x: hidden;
 }
@@ -61,157 +42,117 @@ button {
 }
 
 /* =========================================
-   BACKGROUND
+   GLOBAL BACKGROUND
 ========================================= */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
+    pointer-events: none;
+    z-index: -5;
 
     background:
         radial-gradient(
-            circle at 72% 28%,
-            rgba(92, 73, 255, 0.10),
-            transparent 28%
+            circle at 72% 42%,
+            rgba(53, 32, 120, 0.12),
+            transparent 25%
         ),
         radial-gradient(
-            circle at 20% 75%,
-            rgba(36, 103, 255, 0.06),
+            circle at 30% 70%,
+            rgba(15, 30, 75, 0.07),
             transparent 30%
-        );
-
-    pointer-events: none;
-    z-index: -2;
-}
-
-.noise {
-    position: fixed;
-    inset: 0;
-
-    opacity: 0.035;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-
-    pointer-events: none;
-    z-index: 20;
+        ),
+        #020205;
 }
 
 /* =========================================
-   HEADER
+   NAVIGATION
 ========================================= */
 
-header {
-    position: fixed;
+.nav {
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-
-    height: 78px;
+    width: 100%;
+    height: 92px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 5vw;
+    padding: 0 5.5vw;
 
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-
-    background: rgba(3,5,11,0.72);
-    backdrop-filter: blur(22px);
-
-    z-index: 100;
+    z-index: 20;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
-
-    line-height: 0.75;
+    align-items: center;
+    line-height: 1;
 }
 
 .logo-main {
-    font-family: "Manrope", sans-serif;
     font-size: 15px;
-    font-weight: 600;
-
     letter-spacing: 0.42em;
-
-    padding-left: 0.42em;
+    font-weight: 400;
+    margin-left: 0.42em;
 }
 
 .logo-script {
     font-family: "Allura", cursive;
-
-    font-size: 25px;
-
-    color: rgba(255,255,255,0.88);
-
-    margin-top: 7px;
-    margin-left: 29px;
-
-    letter-spacing: 0.03em;
+    font-size: 23px;
+    margin-top: 2px;
+    transform: rotate(-4deg);
+    letter-spacing: 0.02em;
 }
 
-nav {
+.nav-links {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 38px;
+    margin-left: auto;
+    margin-right: 34px;
 }
 
-nav a {
-    font-size: 10px;
-    font-weight: 500;
-
-    letter-spacing: 0.12em;
+.nav-links a {
+    font-size: 9px;
     text-transform: uppercase;
-
-    color: rgba(255,255,255,0.68);
-
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.76);
     transition: 0.3s ease;
 }
 
-nav a:hover {
-    color: white;
+.nav-links a:hover {
+    color: #ffffff;
 }
 
-.nav-explore {
-    border: 1px solid rgba(79,141,255,0.5);
+.explore-nav {
+    border: 1px solid rgba(76, 145, 255, 0.8);
+    border-radius: 30px;
+    padding: 11px 22px;
+    color: #8bbcff !important;
+}
 
-    border-radius: 999px;
-
-    padding: 10px 21px;
-
-    color: #9dc0ff !important;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(72,129,255,0.08),
-            rgba(155,92,255,0.08)
-        );
-
-    box-shadow:
-        inset 0 0 18px rgba(80,130,255,0.05),
-        0 0 20px rgba(71,112,255,0.05);
+.explore-nav:hover {
+    background: rgba(57, 126, 255, 0.12);
 }
 
 .menu {
-    width: 35px;
-    height: 35px;
-
-    border: 1px solid var(--line);
-
-    border-radius: 50%;
-
+    width: 25px;
+    height: 18px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 4px;
+}
 
-    color: white;
-
-    font-size: 14px;
+.menu span {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.8);
 }
 
 /* =========================================
@@ -219,373 +160,431 @@ nav a:hover {
 ========================================= */
 
 .hero {
-    min-height: 100vh;
+    min-height: 690px;
+    height: 100vh;
+    max-height: 850px;
 
     position: relative;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
 
-    padding: 130px 7vw 80px;
-
-    overflow: hidden;
+    padding: 80px 5.5vw 50px;
 }
 
-.hero-content {
-    width: 48%;
+/* Very subtle star field */
 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.4;
+
+    background-image:
+        radial-gradient(circle at 12% 25%, #ffffff 0 0.7px, transparent 1px),
+        radial-gradient(circle at 30% 12%, #ffffff 0 0.6px, transparent 1px),
+        radial-gradient(circle at 52% 18%, #ffffff 0 0.5px, transparent 1px),
+        radial-gradient(circle at 78% 12%, #ffffff 0 0.7px, transparent 1px),
+        radial-gradient(circle at 91% 38%, #ffffff 0 0.5px, transparent 1px),
+        radial-gradient(circle at 62% 74%, #ffffff 0 0.5px, transparent 1px),
+        radial-gradient(circle at 22% 82%, #ffffff 0 0.5px, transparent 1px),
+        radial-gradient(circle at 84% 84%, #ffffff 0 0.5px, transparent 1px);
+
+    background-size:
+        270px 210px,
+        350px 280px,
+        430px 310px,
+        300px 240px,
+        390px 320px,
+        330px 270px,
+        450px 350px,
+        370px 300px;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
     position: relative;
-    z-index: 5;
+    z-index: 8;
+    width: 42%;
+    max-width: 560px;
 }
 
 .eyebrow {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 17px;
 
-    color: #858da3;
+    color: rgba(157,184,255,0.85);
 
     font-size: 9px;
-
-    letter-spacing: 0.28em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
 
     margin-bottom: 22px;
 }
 
-.eyebrow::before {
-    content: "";
-
-    width: 20px;
+.eyebrow-line {
+    width: 42px;
     height: 1px;
-
-    background: linear-gradient(
-        90deg,
-        var(--purple),
-        var(--blue)
-    );
+    background: #658fff;
 }
 
-.hero h1 {
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(48px, 7vw, 102px);
-
+.hero-title {
+    font-size: clamp(42px, 5.4vw, 78px);
     font-weight: 300;
-
-    line-height: 0.92;
-
-    letter-spacing: -0.055em;
-
-    max-width: 700px;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
 }
 
-.hero h1 span {
+.hero-title .white {
+    display: block;
+    color: #f4f4f7;
+}
+
+.hero-title .gradient {
     display: block;
 
-    background:
-        linear-gradient(
-            100deg,
-            #8b51ff,
-            #4f8fff,
-            #b46cff
-        );
+    background: linear-gradient(
+        100deg,
+        #9b38ff,
+        #6d52ff 45%,
+        #239bff
+    );
 
     -webkit-background-clip: text;
     background-clip: text;
-
     color: transparent;
 }
 
 .hero-description {
-    max-width: 430px;
+    margin-top: 26px;
 
-    color: #8c94a8;
+    max-width: 390px;
 
-    font-size: 13px;
+    color: rgba(224,226,238,0.65);
 
+    font-size: 11px;
     line-height: 1.75;
-
-    margin-top: 28px;
+    font-weight: 300;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 12px;
-
-    margin-top: 32px;
+    gap: 16px;
+    margin-top: 29px;
 }
 
-.primary-button,
-.secondary-button {
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 
-    padding: 14px 22px;
+    min-width: 150px;
+    height: 43px;
 
-    border-radius: 999px;
+    border-radius: 30px;
 
     font-size: 9px;
-
     letter-spacing: 0.12em;
     text-transform: uppercase;
 
-    transition: 0.35s ease;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
-.primary-button {
-    color: white;
-
-    background:
-        linear-gradient(
-            100deg,
-            #b33cff,
-            #5a72ff,
-            #3fa7ff
-        );
-
-    box-shadow:
-        0 8px 35px rgba(94,75,255,0.28);
-}
-
-.primary-button:hover {
+.btn:hover {
     transform: translateY(-2px);
+}
+
+.btn-primary {
+    border: none;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        100deg,
+        #c62cff,
+        #665cff 48%,
+        #24a9ff
+    );
 
     box-shadow:
-        0 12px 45px rgba(94,75,255,0.4);
+        0 10px 35px rgba(86,42,255,0.25);
 }
 
-.secondary-button {
-    border: 1px solid var(--line);
-
-    color: #c2c8d7;
-
-    background: rgba(255,255,255,0.025);
-}
-
-.secondary-button:hover {
-    border-color: rgba(255,255,255,0.25);
+.btn-secondary {
+    border: 1px solid rgba(120,138,180,0.45);
+    background: rgba(3,4,10,0.5);
+    color: rgba(255,255,255,0.9);
 }
 
 /* =========================================
    BLACK HOLE
 ========================================= */
 
-.black-hole-area {
+.black-hole-container {
     position: absolute;
+
+    width: min(68vw, 760px);
+    height: min(68vw, 760px);
 
     right: -2vw;
     top: 50%;
 
-    width: min(65vw, 850px);
-    aspect-ratio: 1;
-
     transform: translateY(-50%);
 
-    z-index: 2;
+    z-index: 3;
 }
 
-.black-hole-glow {
-    position: absolute;
+/* Large faint outer space */
 
-    inset: 10%;
+.black-hole-container::before {
+    content: "";
+    position: absolute;
+    inset: -15%;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle,
-            rgba(91,69,255,0.15),
-            rgba(74,67,255,0.07) 35%,
+            ellipse at center,
+            transparent 40%,
+            rgba(38,71,180,0.07) 48%,
             transparent 67%
         );
 
-    filter: blur(35px);
-
-    animation: breathing 7s ease-in-out infinite;
+    filter: blur(20px);
 }
 
-@keyframes breathing {
-    0%,100% {
-        transform: scale(0.98);
-        opacity: 0.7;
-    }
+/* Main accretion disc */
 
-    50% {
-        transform: scale(1.04);
-        opacity: 1;
-    }
-}
-
-/* SVG disk */
-
-.black-hole-svg {
+.accretion-disc {
     position: absolute;
+    width: 76%;
+    height: 43%;
 
-    width: 100%;
-    height: 100%;
-
-    overflow: visible;
-
-    transform: rotate(-13deg);
-
-    animation: diskFloat 12s ease-in-out infinite;
-}
-
-@keyframes diskFloat {
-    0%,100% {
-        transform: rotate(-13deg) scale(1);
-    }
-
-    50% {
-        transform: rotate(-10deg) scale(1.025);
-    }
-}
-
-.disk-outer {
-    fill: none;
-
-    stroke:
-        url(#diskGradient);
-
-    stroke-width: 22;
-
-    opacity: 0.75;
-
-    filter:
-        url(#blurGlow);
-}
-
-.disk-middle {
-    fill: none;
-
-    stroke:
-        url(#diskGradient);
-
-    stroke-width: 13;
-
-    opacity: 0.95;
-
-    filter:
-        url(#softGlow);
-}
-
-.disk-inner {
-    fill: none;
-
-    stroke:
-        url(#diskGradient);
-
-    stroke-width: 6;
-
-    opacity: 1;
-}
-
-.disk-detail {
-    fill: none;
-
-    stroke:
-        url(#detailGradient);
-
-    stroke-width: 2;
-
-    opacity: 0.9;
-}
-
-.hole {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 30%;
-    height: 30%;
-
-    transform: translate(-50%, -50%);
+    left: 12%;
+    top: 29%;
 
     border-radius: 50%;
+
+    transform:
+        rotate(-18deg)
+        skewX(-8deg);
 
     background:
         radial-gradient(
-            circle at 45% 40%,
-            #000,
-            #000 60%,
-            #010208
+            ellipse at center,
+            #010103 0%,
+            #010103 24%,
+            transparent 25%
+        ),
+        conic-gradient(
+            from 20deg,
+            transparent 0deg,
+            rgba(30,89,255,0.25) 35deg,
+            rgba(51,125,255,0.9) 70deg,
+            rgba(140,85,255,0.95) 105deg,
+            rgba(255,119,248,0.72) 135deg,
+            transparent 175deg,
+            transparent 220deg,
+            rgba(28,81,255,0.65) 270deg,
+            rgba(88,52,255,0.9) 315deg,
+            transparent 355deg
         );
 
-    box-shadow:
-        0 0 20px rgba(0,0,0,0.95),
-        0 0 55px rgba(24,21,67,0.9),
-        0 0 100px rgba(50,43,156,0.35);
-
-    z-index: 4;
+    filter:
+        blur(2px)
+        drop-shadow(0 0 18px rgba(65,88,255,0.55))
+        drop-shadow(0 0 45px rgba(126,52,255,0.22));
 }
 
-.hole::before {
-    content: "";
+/* Second luminous ring */
 
+.accretion-disc::before {
+    content: "";
     position: absolute;
 
-    inset: -10%;
+    inset: 7% 4%;
 
     border-radius: 50%;
 
-    border: 1px solid rgba(160,132,255,0.32);
+    border:
+        9px solid transparent;
 
-    filter: blur(1px);
+    border-top-color: rgba(76,145,255,0.85);
+    border-right-color: rgba(159,76,255,0.85);
+    border-bottom-color: rgba(42,74,180,0.25);
+
+    transform: rotate(24deg);
+
+    filter:
+        blur(3px)
+        drop-shadow(0 0 12px rgba(71,117,255,0.8));
 }
 
-/* =========================================
-   SIDE INDICATOR
-========================================= */
+/* Thin bright inner ring */
 
-.side-indicator {
-    position: absolute;
-
-    right: 4vw;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-
-    z-index: 10;
-}
-
-.side-indicator span {
-    font-size: 8px;
-
-    color: #697185;
-
-    position: relative;
-}
-
-.side-indicator span:first-child {
-    color: white;
-}
-
-.side-indicator span:first-child::after {
+.accretion-disc::after {
     content: "";
 
     position: absolute;
 
-    right: -13px;
-    top: 50%;
+    inset: 17% 12%;
 
-    width: 2px;
-    height: 27px;
+    border-radius: 50%;
+
+    border: 3px solid rgba(255,255,255,0.75);
+
+    border-left-color: #2d7dff;
+    border-bottom-color: #673cff;
+    border-right-color: #c87bff;
+
+    transform: rotate(-18deg);
+
+    filter:
+        blur(1.5px)
+        drop-shadow(0 0 8px rgba(108,87,255,0.9));
+}
+
+/* Black event horizon */
+
+.event-horizon {
+    position: absolute;
+
+    width: 35%;
+    height: 28%;
+
+    left: 32.5%;
+    top: 36%;
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+
+    background:
+        radial-gradient(
+            ellipse at 45% 45%,
+            #000000 0%,
+            #000000 58%,
+            #010104 76%,
+            transparent 100%
+        );
+
+    box-shadow:
+        inset 0 0 35px #000000,
+        0 0 22px rgba(0,0,0,1);
+
+    z-index: 6;
+}
+
+/* Bright gas strands */
+
+.gas {
+    position: absolute;
+
+    left: 5%;
+    top: 22%;
+
+    width: 90%;
+    height: 56%;
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+
+    border: 1px solid transparent;
+
+    border-top-color: rgba(63,123,255,0.65);
+    border-right-color: rgba(155,73,255,0.42);
+
+    filter:
+        blur(4px)
+        drop-shadow(0 0 10px rgba(56,104,255,0.5));
+
+    opacity: 0.75;
+}
+
+.gas-two {
+    position: absolute;
+
+    left: 10%;
+    top: 28%;
+
+    width: 83%;
+    height: 46%;
+
+    border-radius: 50%;
+
+    transform: rotate(-18deg);
+
+    border: 2px solid transparent;
+
+    border-top-color: rgba(44,123,255,0.65);
+    border-left-color: rgba(99,62,255,0.7);
+
+    filter:
+        blur(5px)
+        drop-shadow(0 0 12px rgba(84,89,255,0.65));
+
+    opacity: 0.8;
+}
+
+/* =========================================
+   SIDE SLIDER
+========================================= */
+
+.hero-index {
+    position: absolute;
+
+    right: 4.2vw;
+    top: 50%;
 
     transform: translateY(-50%);
 
-    background:
-        linear-gradient(
-            var(--purple),
-            var(--blue)
-        );
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 23px;
+}
+
+.index-number {
+    font-size: 9px;
+    color: rgba(255,255,255,0.8);
+}
+
+.index-active {
+    width: 2px;
+    height: 38px;
+
+    background: linear-gradient(
+        to bottom,
+        #9e35ff,
+        #4d7cff
+    );
+
+    box-shadow: 0 0 12px rgba(105,67,255,0.8);
+}
+
+.index-line {
+    width: 1px;
+    height: 37px;
+    background: rgba(255,255,255,0.18);
 }
 
 /* =========================================
@@ -595,27 +594,30 @@ nav a:hover {
 .scroll {
     position: absolute;
 
+    right: 3.6vw;
     bottom: 30px;
-    right: 5vw;
+
+    z-index: 10;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 9px;
 
-    color: #71798e;
+    color: rgba(255,255,255,0.55);
+}
 
+.scroll-text {
     font-size: 7px;
-
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
 .scroll-circle {
-    width: 28px;
-    height: 28px;
+    width: 39px;
+    height: 39px;
 
-    border: 1px solid var(--line);
+    border: 1px solid rgba(255,255,255,0.35);
 
     border-radius: 50%;
 
@@ -623,364 +625,398 @@ nav a:hover {
     align-items: center;
     justify-content: center;
 
-    font-size: 12px;
+    font-size: 17px;
 }
 
 /* =========================================
-   FEATURED
+   SECTIONS
 ========================================= */
 
 .section {
-    padding: 100px 5vw;
+    position: relative;
+
+    padding:
+        50px
+        5.5vw
+        90px;
 }
 
-.section-header {
+.section-heading {
     display: flex;
-    align-items: end;
-    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
 
-    margin-bottom: 35px;
-}
+    margin-bottom: 23px;
 
-.section-label {
-    color: #71798d;
-
-    font-size: 9px;
-
-    letter-spacing: 0.25em;
+    font-size: 11px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
 
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.92);
 }
 
-.section-title {
-    font-family: "Manrope", sans-serif;
-
-    font-size: clamp(30px, 4vw, 48px);
-
-    font-weight: 300;
-
-    letter-spacing: -0.04em;
-}
-
-.section-description {
-    max-width: 330px;
-
-    color: #737b90;
-
-    font-size: 12px;
-
-    line-height: 1.7;
+.section-heading::after {
+    content: "";
+    width: 38px;
+    height: 1px;
+    background: #627cff;
 }
 
 /* =========================================
-   PACK GRID
+   FEATURED PACKS
 ========================================= */
 
-.pack-grid {
+.featured-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
 .pack-card {
     position: relative;
 
-    min-height: 390px;
-
-    border: 1px solid var(--line);
-
-    border-radius: 15px;
+    min-height: 175px;
 
     overflow: hidden;
 
-    background: var(--black-2);
+    border: 1px solid rgba(117,132,178,0.27);
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,12,21,0.9),
+            rgba(2,3,7,0.98)
+        );
 
     transition:
-        transform 0.45s ease,
-        border-color 0.45s ease,
-        box-shadow 0.45s ease;
+        transform 0.35s ease,
+        border-color 0.35s ease;
 }
 
 .pack-card:hover {
-    transform: translateY(-7px);
-
-    border-color: rgba(116,139,255,0.3);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+    border-color: rgba(104,132,255,0.6);
 }
 
 .pack-image {
     position: absolute;
-
     inset: 0;
 
-    background-size: cover;
-    background-position: center;
-
-    transition: transform 0.7s ease;
+    background:
+        radial-gradient(
+            ellipse at 75% 35%,
+            rgba(52,80,200,0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 30% 70%,
+            rgba(85,40,160,0.1),
+            transparent 35%
+        ),
+        #030408;
 }
 
-.pack-card:hover .pack-image {
-    transform: scale(1.05);
-}
-
-.pack-overlay {
+.pack-image::after {
+    content: "";
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             to top,
-            rgba(2,4,10,0.96),
-            rgba(2,4,10,0.15) 65%,
-            transparent
+            rgba(0,0,0,0.98),
+            rgba(0,0,0,0.35) 60%,
+            rgba(0,0,0,0.15)
         );
+}
+
+/*
+   FUTURE PACK IMAGE
+
+   When you have a wallpaper pack image,
+   change the background-image line below.
+
+   Example:
+
+   background-image: url("images/my-pack.jpg");
+*/
+
+.pack-card:nth-child(1) .pack-image {
+    background:
+        radial-gradient(
+            circle at 65% 30%,
+            rgba(55,94,255,0.25),
+            transparent 25%
+        ),
+        #020307;
+}
+
+.pack-card:nth-child(2) .pack-image {
+    background:
+        radial-gradient(
+            ellipse at 70% 40%,
+            rgba(102,53,255,0.28),
+            transparent 30%
+        ),
+        #020207;
+}
+
+.pack-card:nth-child(3) .pack-image {
+    background:
+        radial-gradient(
+            ellipse at 50% 20%,
+            rgba(55,85,150,0.2),
+            transparent 35%
+        ),
+        #020307;
 }
 
 .pack-content {
     position: absolute;
+    inset: 0;
 
-    left: 22px;
-    right: 22px;
-    bottom: 21px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 3;
 }
 
 .pack-number {
-    color: #8991a4;
-
-    font-size: 8px;
-
-    letter-spacing: 0.18em;
-
-    margin-bottom: 12px;
-}
-
-.pack-name {
-    font-family: "Manrope", sans-serif;
-
-    font-size: 22px;
-
-    font-weight: 500;
-
-    letter-spacing: -0.03em;
-}
-
-.pack-text {
-    color: #9299aa;
-
     font-size: 10px;
-
-    line-height: 1.5;
-
-    margin-top: 6px;
-
-    max-width: 240px;
+    color: rgba(255,255,255,0.8);
 }
 
-.pack-price {
-    display: inline-block;
+.pack-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-    margin-top: 14px;
+.pack-title {
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+}
 
-    padding: 7px 12px;
-
-    border: 1px solid rgba(255,255,255,0.13);
-
-    border-radius: 999px;
-
+.pack-description {
     font-size: 8px;
-
-    color: #cdd2df;
+    color: rgba(255,255,255,0.58);
+    margin-top: 5px;
 }
 
-/* =========================================
-   PACK IMAGE THEMES
-========================================= */
-
-.pack-1 {
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(87,108,255,0.45),
-            transparent 25%
-        ),
-        linear-gradient(
-            140deg,
-            #050914,
-            #111b3c 50%,
-            #020308
-        );
-}
-
-.pack-2 {
-    background:
-        radial-gradient(
-            ellipse at 55% 45%,
-            rgba(132,62,255,0.75),
-            transparent 25%
-        ),
-        linear-gradient(
-            145deg,
-            #080411,
-            #241044,
-            #03050b
-        );
-}
-
-.pack-3 {
-    background:
-        radial-gradient(
-            circle at 35% 35%,
-            rgba(63,136,255,0.35),
-            transparent 30%
-        ),
-        linear-gradient(
-            140deg,
-            #03060d,
-            #0c1422,
-            #03050b
-        );
+.pack-action {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9dbdff;
 }
 
 /* =========================================
    ALL PRODUCTS
 ========================================= */
 
-.products {
-    padding-top: 70px;
+.products-section {
+    padding-top: 10px;
 }
 
-.product-list {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 14px;
-}
-
-.product {
-    border: 1px solid var(--line);
-
-    border-radius: 13px;
-
-    overflow: hidden;
-
-    background: rgba(255,255,255,0.025);
-
-    transition: 0.35s ease;
-}
-
-.product:hover {
-    transform: translateY(-4px);
-
-    border-color: rgba(110,135,255,0.3);
-}
-
-.product-art {
-    aspect-ratio: 1 / 1.18;
-
-    background:
-        linear-gradient(
-            145deg,
-            #10182e,
-            #05070e
-        );
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.product-art::before {
-    content: "";
-
-    width: 65%;
-    height: 65%;
-
-    border-radius: 50%;
-
-    background:
-        conic-gradient(
-            from 20deg,
-            #4e8cff,
-            #a75cff,
-            #4e8cff,
-            #071020,
-            #9b5cff
-        );
-
-    filter: blur(25px);
-
-    opacity: 0.45;
-}
-
-.product-art::after {
-    content: "";
-
-    position: absolute;
-
-    width: 30%;
-    height: 30%;
-
-    border-radius: 50%;
-
-    background: #020308;
-
-    box-shadow:
-        0 0 30px rgba(85,72,255,0.35);
-}
-
-.product-info {
-    padding: 16px;
-}
-
-.product-info h3 {
-    font-size: 13px;
-
-    font-weight: 500;
-}
-
-.product-info p {
-    color: #777f93;
-
-    font-size: 9px;
-
-    margin-top: 5px;
-}
-
-.product-info-bottom {
+.products-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 13px;
+    margin-bottom: 23px;
 }
 
-.product-price {
-    font-size: 10px;
+.view-all {
+    border: 1px solid rgba(100,124,190,0.35);
 
-    color: #c8cde0;
-}
+    padding: 10px 18px;
 
-.product-link {
+    border-radius: 25px;
+
     font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 
-    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.8);
 
-    color: #78a4ff;
+    transition: 0.3s ease;
+}
+
+.view-all:hover {
+    border-color: #648eff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.product {
+    position: relative;
+
+    aspect-ratio: 0.78;
+
+    border: 1px solid rgba(105,120,170,0.22);
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: #05060b;
+
+    cursor: pointer;
+}
+
+.product-image {
+    position: absolute;
+    inset: 0;
+
+    transition: transform 0.6s ease;
+}
+
+.product:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product:nth-child(1) .product-image {
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            #010104 0 12%,
+            transparent 13%
+        ),
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(42,119,255,0.8),
+            transparent 35%
+        ),
+        #02030a;
+}
+
+.product:nth-child(2) .product-image {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(147,46,255,0.65),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(24,80,200,0.3),
+            transparent 50%
+        ),
+        #020207;
+}
+
+.product:nth-child(3) .product-image {
+    background:
+        radial-gradient(
+            circle at 60% 35%,
+            rgba(180,180,220,0.25),
+            transparent 15%
+        ),
+        linear-gradient(
+            145deg,
+            #03040a,
+            #0a0b14
+        );
+}
+
+.product:nth-child(4) .product-image {
+    background:
+        radial-gradient(
+            ellipse at 50% 55%,
+            rgba(130,43,255,0.75),
+            transparent 25%
+        ),
+        #020205;
+}
+
+.product:nth-child(5) .product-image {
+    background:
+        radial-gradient(
+            circle at 55% 40%,
+            rgba(75,105,210,0.35),
+            transparent 22%
+        ),
+        #020308;
+}
+
+.product:nth-child(6) .product-image {
+    background:
+        radial-gradient(
+            ellipse at 40% 50%,
+            rgba(39,83,230,0.65),
+            transparent 25%
+        ),
+        #020307;
+}
+
+.product:nth-child(7) .product-image {
+    background:
+        radial-gradient(
+            ellipse at 70% 55%,
+            rgba(119,50,240,0.65),
+            transparent 28%
+        ),
+        #020205;
+}
+
+.product:nth-child(8) .product-image {
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(64,101,220,0.4),
+            transparent 30%
+        ),
+        #010207;
+}
+
+.product::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.92),
+            transparent 45%
+        );
+}
+
+.product-info {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+
+    z-index: 3;
+}
+
+.product-name {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.product-type {
+    margin-top: 4px;
+
+    font-size: 7px;
+
+    color: rgba(255,255,255,0.5);
 
     text-transform: uppercase;
+    letter-spacing: 0.13em;
 }
 
 /* =========================================
@@ -988,49 +1024,53 @@ nav a:hover {
 ========================================= */
 
 .cta {
-    margin: 80px 5vw;
-
-    padding: 90px 30px;
-
     text-align: center;
 
-    border: 1px solid var(--line);
-
-    border-radius: 22px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(93,76,255,0.18),
-            transparent 48%
-        ),
-        rgba(255,255,255,0.025);
-
-    overflow: hidden;
-
-    position: relative;
+    padding:
+        100px
+        20px
+        130px;
 }
 
-.cta h2 {
-    font-family: "Manrope", sans-serif;
+.cta-small {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    color: rgba(130,157,220,0.8);
+}
 
-    font-size: clamp(34px, 5vw, 65px);
+.cta-title {
+    margin-top: 18px;
+
+    font-size: clamp(32px, 5vw, 65px);
 
     font-weight: 300;
 
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
 }
 
-.cta p {
-    max-width: 480px;
+.cta-title span {
+    background:
+        linear-gradient(
+            100deg,
+            #a43cff,
+            #4c9dff
+        );
 
-    margin: 18px auto 30px;
+    -webkit-background-clip: text;
+    background-clip: text;
 
-    color: #80889b;
+    color: transparent;
+}
 
-    font-size: 12px;
+.cta-text {
+    max-width: 450px;
+    margin: 18px auto 28px;
 
+    font-size: 10px;
     line-height: 1.7;
+
+    color: rgba(255,255,255,0.52);
 }
 
 /* =========================================
@@ -1038,30 +1078,88 @@ nav a:hover {
 ========================================= */
 
 footer {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(255,255,255,0.08);
 
-    padding: 35px 5vw;
+    padding:
+        35px
+        5.5vw;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    color: #646c80;
-
-    font-size: 9px;
 }
 
 .footer-logo {
-    letter-spacing: 0.25em;
+    font-size: 10px;
+    letter-spacing: 0.3em;
 }
 
 .footer-links {
     display: flex;
-    gap: 22px;
+    gap: 25px;
 }
 
-.footer-links a:hover {
-    color: white;
+.footer-links a {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+}
+
+.copyright {
+    font-size: 7px;
+    color: rgba(255,255,255,0.3);
+}
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.mobile-menu {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(57,61,150,0.15),
+            transparent 30%
+        ),
+        #020205;
+
+    z-index: 100;
+
+    padding: 110px 35px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-close {
+    position: absolute;
+
+    top: 32px;
+    right: 30px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.mobile-links a {
+    font-size: 24px;
+    font-weight: 300;
 }
 
 /* =========================================
@@ -1070,196 +1168,685 @@ footer {
 
 @media (max-width: 900px) {
 
-    nav {
-        gap: 18px;
-    }
-
-    nav a:not(.nav-explore) {
+    .nav-links {
         display: none;
     }
 
+    .nav {
+        padding: 0 25px;
+    }
+
     .hero {
-        min-height: 920px;
+        min-height: 780px;
+        height: auto;
+
+        padding:
+            125px
+            25px
+            55px;
 
         align-items: flex-start;
-
-        padding-top: 150px;
     }
 
     .hero-content {
         width: 100%;
-
-        position: relative;
-        z-index: 10;
+        max-width: 500px;
     }
 
-    .hero h1 {
-        font-size: clamp(50px, 13vw, 82px);
+    .hero-title {
+        font-size: clamp(43px, 11vw, 70px);
     }
 
-    .black-hole-area {
-        width: 120vw;
-
-        max-width: none;
-
-        right: -35vw;
-
-        top: 57%;
-
-        opacity: 0.9;
+    .hero-description {
+        max-width: 320px;
     }
 
-    .side-indicator {
+    .black-hole-container {
+        width: 105vw;
+        height: 105vw;
+
+        right: -30vw;
+        top: 58%;
+    }
+
+    .hero-index {
+        right: 20px;
+        top: 55%;
+    }
+
+    .scroll {
         display: none;
     }
 
-    .pack-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .featured-grid {
+        grid-template-columns: 1fr;
     }
 
-    .product-list {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .pack-card {
+        min-height: 190px;
     }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .cta {
+        padding:
+            80px
+            25px
+            100px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 22px;
+    }
+
 }
 
-@media (max-width: 600px) {
-
-    header {
-        height: 68px;
-
-        padding: 0 20px;
-    }
+@media (max-width: 500px) {
 
     .logo-main {
         font-size: 12px;
     }
 
     .logo-script {
-        font-size: 21px;
-
-        margin-left: 22px;
+        font-size: 20px;
     }
 
     .hero {
-        min-height: 850px;
-
-        padding:
-            125px
-            22px
-            70px;
-    }
-
-    .hero h1 {
-        font-size: 54px;
-    }
-
-    .hero-description {
-        font-size: 11px;
-
-        max-width: 320px;
+        min-height: 760px;
     }
 
     .hero-buttons {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .black-hole-area {
-        width: 145vw;
-
-        right: -48vw;
-
-        top: 59%;
+    .btn {
+        min-width: 160px;
     }
 
-    .section {
-        padding:
-            75px
-            22px;
+    .black-hole-container {
+        width: 125vw;
+        height: 125vw;
+
+        right: -38vw;
+        top: 60%;
     }
 
-    .section-header {
-        display: block;
+    .hero-index {
+        display: none;
     }
 
-    .section-description {
-        margin-top: 15px;
+    .products-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
     }
 
-    .pack-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pack-card {
-        min-height: 360px;
-    }
-
-    .product-list {
-        grid-template-columns: 1fr 1fr;
-
+    .product-grid {
         gap: 10px;
     }
 
-    .product-info {
-        padding: 12px;
+    .product-name {
+        font-size: 9px;
     }
 
-    .product-info h3 {
-        font-size: 11px;
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .cta {
-        margin:
-            40px
-            22px;
+}
 
-        padding:
-            65px
-            20px;
+/* =========================================
+   FADE-IN ANIMATION
+========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    footer {
-        flex-direction: column;
-
-        gap: 18px;
-
-        text-align: center;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.hero-content > * {
+    animation: fadeUp 1s ease both;
+}
+
+.eyebrow {
+    animation-delay: 0.1s;
+}
+
+.hero-title {
+    animation-delay: 0.2s;
+}
+
+.hero-description {
+    animation-delay: 0.35s;
+}
+
+.hero-buttons {
+    animation-delay: 0.5s;
 }
 
 </style>
 </head>
 
+
 <body>
 
-<div class="noise"></div>
-
 <!-- =========================================
-     HEADER
+     NAVIGATION
 ========================================= -->
 
-<header>
+<header class="nav">
 
-    <a href="#home" class="logo">
-
-        <span class="logo-main">
-            PARALLAX
-        </span>
-
-        <span class="logo-script">
-            designs
-        </span>
-
+    <a href="#" class="logo">
+        <span class="logo-main">PARALLAX</span>
+        <span class="logo-script">designs</span>
     </a>
 
-    <nav>
+    <nav class="nav-links">
+        <a href="#products">SHOP</a>
+        <a href="#featured">COLLECTIONS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
 
-        <a href="#shop">
+        <a href="#products" class="explore-nav">
+            EXPLORE&nbsp;&nbsp; →
+        </a>
+    </nav>
+
+    <div class="menu" id="menuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-close" id="mobileClose">
+        ×
+    </div>
+
+    <nav class="mobile-links">
+        <a href="#products">SHOP</a>
+        <a href="#featured">COLLECTIONS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</div>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            <span>DIGITAL DESIGN STUDIO</span>
+            <span class="eyebrow-line"></span>
+        </div>
+
+        <h1 class="hero-title">
+            <span class="white">YOUR SCREEN.</span>
+            <span class="gradient">REDEFINED.</span>
+        </h1>
+
+        <p class="hero-description">
+            Premium digital artwork, wallpapers and
+            creative experiences designed to make
+            ordinary screens feel extraordinary.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn btn-primary">
+                EXPLORE DESIGNS
+                <span>→</span>
+            </a>
+
+            <a href="#featured" class="btn btn-secondary">
+                VIEW COLLECTIONS
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         BLACK HOLE VISUAL
+    ====================================== -->
+
+    <div class="black-hole-container">
+
+        <div class="gas"></div>
+        <div class="gas-two"></div>
+
+        <div class="accretion-disc"></div>
+
+        <div class="event-horizon"></div>
+
+    </div>
+
+
+    <!-- =====================================
+         SIDE INDEX
+    ====================================== -->
+
+    <div class="hero-index">
+
+        <span class="index-number">01</span>
+
+        <span class="index-active"></span>
+
+        <span class="index-number">02</span>
+
+        <span class="index-number">03</span>
+
+    </div>
+
+
+    <!-- =====================================
+         SCROLL
+    ====================================== -->
+
+    <div class="scroll">
+
+        <span class="scroll-text">SCROLL</span>
+
+        <span class="scroll-circle">↓</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FEATURED PACKS
+========================================= -->
+
+<section class="section" id="featured">
+
+    <div class="section-heading">
+        FEATURED PACKS
+    </div>
+
+
+    <div class="featured-grid">
+
+
+        <!-- PACK 01 -->
+
+        <a href="#products" class="pack-card">
+
+            <div class="pack-image"></div>
+
+            <div class="pack-content">
+
+                <span class="pack-number">
+                    01
+                </span>
+
+                <div class="pack-bottom">
+
+                    <div>
+                        <div class="pack-title">
+                            YOUR PACK
+                        </div>
+
+                        <div class="pack-description">
+                            Your next collection.
+                        </div>
+                    </div>
+
+                    <span class="pack-action">
+                        VIEW PACK →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PACK 02 -->
+
+        <a href="#products" class="pack-card">
+
+            <div class="pack-image"></div>
+
+            <div class="pack-content">
+
+                <span class="pack-number">
+                    02
+                </span>
+
+                <div class="pack-bottom">
+
+                    <div>
+                        <div class="pack-title">
+                            YOUR PACK
+                        </div>
+
+                        <div class="pack-description">
+                            Your next collection.
+                        </div>
+                    </div>
+
+                    <span class="pack-action">
+                        VIEW PACK →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PACK 03 -->
+
+        <a href="#products" class="pack-card">
+
+            <div class="pack-image"></div>
+
+            <div class="pack-content">
+
+                <span class="pack-number">
+                    03
+                </span>
+
+                <div class="pack-bottom">
+
+                    <div>
+                        <div class="pack-title">
+                            YOUR PACK
+                        </div>
+
+                        <div class="pack-description">
+                            Your next collection.
+                        </div>
+                    </div>
+
+                    <span class="pack-action">
+                        VIEW PACK →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PRODUCTS
+========================================= -->
+
+<section
+    class="section products-section"
+    id="products"
+>
+
+    <div class="products-header">
+
+        <div class="section-heading">
+            ALL PRODUCTS
+        </div>
+
+        <a href="#products" class="view-all">
+            VIEW ALL PRODUCTS →
+        </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    BLACK HOLE
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    COSMIC
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    ECLIPSE
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    NEBULA
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    VOID
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    AURORA
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    SINGULARITY
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="#" class="product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <div class="product-name">
+                    AFTERLIGHT
+                </div>
+
+                <div class="product-type">
+                    Wallpaper Pack
+                </div>
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section class="cta" id="about">
+
+    <div class="cta-small">
+        PARALLAX DESIGNS
+    </div>
+
+    <h2 class="cta-title">
+        Designed to make
+        <span>your screen different.</span>
+    </h2>
+
+    <p class="cta-text">
+        Premium digital wallpapers and artwork created
+        with detail, depth and a focus on making every
+        screen feel completely its own.
+    </p>
+
+    <a href="#products" class="btn btn-primary">
+        EXPLORE THE COLLECTION →
+    </a>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+    class="section"
+    id="contact"
+    style="text-align:center; padding-top:20px;"
+>
+
+    <div class="section-heading" style="justify-content:center;">
+        CONTACT
+    </div>
+
+    <p style="
+        font-size:10px;
+        color:rgba(255,255,255,0.5);
+        line-height:1.8;
+    ">
+        For enquiries, collaborations and support,
+        contact PARALLAX designs.
+    </p>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        PARALLAX designs
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#products">
             Shop
         </a>
 
-        <a href="#collections">
+        <a href="#featured">
             Collections
         </a>
 
@@ -1271,683 +1858,40 @@ footer {
             Contact
         </a>
 
-        <a href="#products" class="nav-explore">
-            Explore
-        </a>
-
-        <div class="menu">
-            ☰
-        </div>
-
-    </nav>
-
-</header>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<main id="home">
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="eyebrow">
-            DIGITAL DESIGN STUDIO
-        </div>
-
-        <h1>
-            YOUR SCREEN.
-            <span>REDEFINED.</span>
-        </h1>
-
-        <p class="hero-description">
-            Premium digital artwork, wallpapers and creative
-            experiences designed to make ordinary screens feel
-            extraordinary.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#collections" class="primary-button">
-                Explore Designs
-                <span>→</span>
-            </a>
-
-            <a href="#products" class="secondary-button">
-                View Collections
-            </a>
-
-        </div>
-
     </div>
 
-
-    <!-- BLACK HOLE -->
-
-    <div class="black-hole-area">
-
-        <div class="black-hole-glow"></div>
-
-        <svg
-            class="black-hole-svg"
-            viewBox="0 0 800 800"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <defs>
-
-                <linearGradient
-                    id="diskGradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                >
-
-                    <stop
-                        offset="0%"
-                        stop-color="#347cff"
-                    />
-
-                    <stop
-                        offset="45%"
-                        stop-color="#8b4cff"
-                    />
-
-                    <stop
-                        offset="70%"
-                        stop-color="#c37bff"
-                    />
-
-                    <stop
-                        offset="100%"
-                        stop-color="#327dff"
-                    />
-
-                </linearGradient>
-
-                <linearGradient
-                    id="detailGradient"
-                    x1="0%"
-                    y1="100%"
-                    x2="100%"
-                    y2="0%"
-                >
-
-                    <stop
-                        offset="0%"
-                        stop-color="#347cff"
-                    />
-
-                    <stop
-                        offset="50%"
-                        stop-color="#ffffff"
-                    />
-
-                    <stop
-                        offset="100%"
-                        stop-color="#a85cff"
-                    />
-
-                </linearGradient>
-
-                <filter id="softGlow">
-
-                    <feGaussianBlur
-                        stdDeviation="4"
-                        result="blur"
-                    />
-
-                    <feMerge>
-
-                        <feMergeNode in="blur"/>
-
-                        <feMergeNode in="SourceGraphic"/>
-
-                    </feMerge>
-
-                </filter>
-
-                <filter id="blurGlow">
-
-                    <feGaussianBlur
-                        stdDeviation="12"
-                    />
-
-                </filter>
-
-            </defs>
-
-
-            <!-- Wide outer ring -->
-
-            <ellipse
-                class="disk-outer"
-                cx="400"
-                cy="400"
-                rx="300"
-                ry="125"
-            />
-
-
-            <!-- Middle ring -->
-
-            <ellipse
-                class="disk-middle"
-                cx="400"
-                cy="400"
-                rx="250"
-                ry="98"
-            />
-
-
-            <!-- Bright inner ring -->
-
-            <ellipse
-                class="disk-inner"
-                cx="400"
-                cy="400"
-                rx="205"
-                ry="76"
-            />
-
-
-            <!-- Fine detail -->
-
-            <ellipse
-                class="disk-detail"
-                cx="400"
-                cy="400"
-                rx="330"
-                ry="135"
-            />
-
-            <ellipse
-                class="disk-detail"
-                cx="400"
-                cy="400"
-                rx="280"
-                ry="112"
-            />
-
-            <ellipse
-                class="disk-detail"
-                cx="400"
-                cy="400"
-                rx="225"
-                ry="86"
-            />
-
-        </svg>
-
-
-        <div class="hole"></div>
-
-    </div>
-
-
-    <div class="side-indicator">
-
-        <span>01</span>
-        <span>02</span>
-        <span>03</span>
-
-    </div>
-
-
-    <div class="scroll">
-
-        <span>Scroll</span>
-
-        <div class="scroll-circle">
-            ↓
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     FEATURED COLLECTIONS
-========================================= -->
-
-<section
-    class="section"
-    id="collections"
->
-
-    <div class="section-header">
-
-        <div>
-
-            <div class="section-label">
-                Featured Collections
-            </div>
-
-            <h2 class="section-title">
-                Selected for your screen.
-            </h2>
-
-        </div>
-
-        <p class="section-description">
-            A rotating selection of PARALLAX wallpaper
-            collections. New designs will appear here as
-            the studio grows.
-        </p>
-
-    </div>
-
-
-    <div class="pack-grid">
-
-
-        <!-- FEATURED PACK 01 -->
-
-        <a
-            href="#products"
-            class="pack-card"
-        >
-
-            <div class="pack-image pack-1"></div>
-
-            <div class="pack-overlay"></div>
-
-            <div class="pack-content">
-
-                <div class="pack-number">
-                    01
-                </div>
-
-                <h3 class="pack-name">
-                    COMING SOON
-                </h3>
-
-                <p class="pack-text">
-                    Your first PARALLAX wallpaper
-                    collection will live here.
-                </p>
-
-                <span class="pack-price">
-                    VIEW PACK →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- FEATURED PACK 02 -->
-
-        <a
-            href="#products"
-            class="pack-card"
-        >
-
-            <div class="pack-image pack-2"></div>
-
-            <div class="pack-overlay"></div>
-
-            <div class="pack-content">
-
-                <div class="pack-number">
-                    02
-                </div>
-
-                <h3 class="pack-name">
-                    NEW COLLECTION
-                </h3>
-
-                <p class="pack-text">
-                    Replace this artwork with
-                    your next wallpaper pack.
-                </p>
-
-                <span class="pack-price">
-                    VIEW PACK →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- FEATURED PACK 03 -->
-
-        <a
-            href="#products"
-            class="pack-card"
-        >
-
-            <div class="pack-image pack-3"></div>
-
-            <div class="pack-overlay"></div>
-
-            <div class="pack-content">
-
-                <div class="pack-number">
-                    03
-                </div>
-
-                <h3 class="pack-name">
-                    FUTURE DROP
-                </h3>
-
-                <p class="pack-text">
-                    Another space reserved for
-                    a future PARALLAX collection.
-                </p>
-
-                <span class="pack-price">
-                    VIEW PACK →
-                </span>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     ALL PRODUCTS
-========================================= -->
-
-<section
-    class="section products"
-    id="products"
->
-
-    <div class="section-header">
-
-        <div>
-
-            <div class="section-label">
-                PARALLAX STORE
-            </div>
-
-            <h2 class="section-title">
-                All Products.
-            </h2>
-
-        </div>
-
-        <p class="section-description">
-            Explore every wallpaper collection available
-            from PARALLAX designs.
-        </p>
-
-    </div>
-
-
-    <div class="product-list">
-
-
-        <!-- PRODUCT 01 -->
-
-        <article class="product">
-
-            <div class="product-art"></div>
-
-            <div class="product-info">
-
-                <h3>
-                    PARALLAX I
-                </h3>
-
-                <p>
-                    Premium iPhone wallpaper collection
-                </p>
-
-                <div class="product-info-bottom">
-
-                    <span class="product-price">
-                        £4.99
-                    </span>
-
-                    <a
-                        href="#"
-                        class="product-link"
-                    >
-                        View →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 02 -->
-
-        <article class="product">
-
-            <div class="product-art"></div>
-
-            <div class="product-info">
-
-                <h3>
-                    PARALLAX II
-                </h3>
-
-                <p>
-                    Premium digital wallpaper collection
-                </p>
-
-                <div class="product-info-bottom">
-
-                    <span class="product-price">
-                        £4.99
-                    </span>
-
-                    <a
-                        href="#"
-                        class="product-link"
-                    >
-                        View →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 03 -->
-
-        <article class="product">
-
-            <div class="product-art"></div>
-
-            <div class="product-info">
-
-                <h3>
-                    PARALLAX III
-                </h3>
-
-                <p>
-                    Premium iPhone wallpaper collection
-                </p>
-
-                <div class="product-info-bottom">
-
-                    <span class="product-price">
-                        £4.99
-                    </span>
-
-                    <a
-                        href="#"
-                        class="product-link"
-                    >
-                        View →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 04 -->
-
-        <article class="product">
-
-            <div class="product-art"></div>
-
-            <div class="product-info">
-
-                <h3>
-                    NEW DROP
-                </h3>
-
-                <p>
-                    New PARALLAX collection
-                </p>
-
-                <div class="product-info-bottom">
-
-                    <span class="product-price">
-                        £4.99
-                    </span>
-
-                    <a
-                        href="#"
-                        class="product-link"
-                    >
-                        View →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CTA
-========================================= -->
-
-<section class="cta">
-
-    <div class="section-label">
-        PARALLAX DESIGNS
-    </div>
-
-    <h2>
-        Make your screen<br>
-        unforgettable.
-    </h2>
-
-    <p>
-        Discover premium wallpaper collections
-        designed to transform the way your device
-        looks and feels.
-    </p>
-
-    <a
-        href="#products"
-        class="primary-button"
-    >
-        Explore All Products →
-    </a>
-
-</section>
-
-</main>
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer id="contact">
-
-    <div class="footer-logo">
-        PARALLAX DESIGNS
-    </div>
-
-    <div>
+    <div class="copyright">
         © 2026 PARALLAX designs
-    </div>
-
-    <div class="footer-links">
-
-        <a href="#shop">
-            Shop
-        </a>
-
-        <a href="#collections">
-            Collections
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
     </div>
 
 </footer>
 
 
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
-/* =========================================
-   SMALL INTERACTION LAYER
-========================================= */
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileClose = document.getElementById("mobileClose");
 
-const hole = document.querySelector(".black-hole-area");
-
-document.addEventListener("mousemove", (event) => {
-
-    if (!hole) return;
-
-    const x =
-        (event.clientX / window.innerWidth - 0.5) * 8;
-
-    const y =
-        (event.clientY / window.innerHeight - 0.5) * 8;
-
-    hole.style.transform =
-        `translateY(-50%) translate(${x}px, ${y}px)`;
-
+menuButton.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
 });
 
+mobileClose.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+});
 
-/* =========================================
-   MOBILE TOUCH MOVEMENT
-========================================= */
+document.querySelectorAll(".mobile-links a").forEach(link => {
 
-document.addEventListener("touchmove", (event) => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
 
-    if (!hole) return;
-
-    const touch = event.touches[0];
-
-    const x =
-        (touch.clientX / window.innerWidth - 0.5) * 5;
-
-    const y =
-        (touch.clientY / window.innerHeight - 0.5) * 5;
-
-    hole.style.transform =
-        `translateY(-50%) translate(${x}px, ${y}px)`;
-
-}, { passive: true });
+});
 
 </script>
 
